@@ -11,8 +11,8 @@ app = Flask(__name__)
 # ================= TOKEN LOAD =================
 def load_tokens(server_name):
     try:
-        if server_name == "IND":
-            path = "token_ind.json"
+        if server_name == "BD":
+            path = "token_bd.json"
         elif server_name in {"BR", "US", "SAC", "NA"}:
             path = "token_br.json"
         else:
