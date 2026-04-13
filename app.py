@@ -29,7 +29,7 @@ def load_tokens(server_name):
 
 # ================= URL =================
 def get_url(server):
-    if server == "IND":
+    if server == "BD":
         return "https://client.ind.freefiremobile.com/GetPlayerPersonalShow"
     elif server in {"BR", "US", "SAC", "NA"}:
         return "https://client.us.freefiremobile.com/GetPlayerPersonalShow"
@@ -109,7 +109,7 @@ async def send_requests(tokens, uid, server):
 @app.route("/visit", methods=["GET"])
 def visit_api():
     uid = request.args.get("uid")
-    region = request.args.get("region", "IND").upper()
+    region = request.args.get("region", "BD").upper()
 
     if not uid or not uid.isdigit():
         return jsonify({"error": "UID must be number"}), 400
